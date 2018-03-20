@@ -9,7 +9,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', function (socket) {
   socket.on('new message', function (message) {
-    console.log(message.msg)
     io.sockets.emit('chat message', message);
   });
 });
